@@ -67,7 +67,7 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: kathirvel.A
 RegisterNumber: 212221230047 
 */
-~~~
+
 
 4X1 MULTIPLEXER:
 
@@ -142,6 +142,12 @@ and(Y3,I,S0,S1);
 endmodule
 
 ~~~~
+
+
+
+
+
+
 
 RTL LOGIC:
 
