@@ -59,11 +59,32 @@ RegisterNumber:
 */
 
 
+4X1 MULTIPLEXER:
+
+module mux(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire S0C,S1C;
+not(S0C,S0);
+not(S1C,S1);
+wire P,Q,R,S;
+and(P,S0C,S1C,I0);
+and(Q,S0C,S1,I1);
+and(R,S0,S1C,I2);
+and(S,S0,S1,I3);
+or(Y,P,Q,R,S);
+endmodule
+
+
 
 
 
 
 ### RTL LOGIC  
+
+
+![image](https://user-images.githubusercontent.com/94911373/171143938-39b8a1b3-a68e-40c9-8603-6443d1b59c68.png)
+
 
 
 
@@ -75,10 +96,56 @@ RegisterNumber:
 ### TIMING DIGRAMS  
 
 
+![image](https://user-images.githubusercontent.com/94911373/171144206-dbc1ced7-80f9-4668-9137-b124abc5e166.png)
+
+
+
 
 
 
 ### TRUTH TABLE 
+
+
+![image](https://user-images.githubusercontent.com/94911373/171144263-c1758df2-39ff-4533-aec9-d797d64b2e14.png)
+
+
+
+
+
+
+1X4 DEMULTIPLEXER:
+
+
+
+module demux(I,S0,S1,Y0,Y1,Y2,Y3);
+input I,S0,S1;
+output Y0,Y1,Y2,Y3;
+wire S0C,S1C;
+not(S0C,S0);
+not(S1C,S1);
+and(Y0,I,S0C,S1C);
+and(Y1,I,S0C,S1);
+and(Y2,I,S0,S1C);
+and(Y3,I,S0,S1);
+endmodule
+
+
+
+RTL LOGIC:
+
+
+![image](https://user-images.githubusercontent.com/94911373/171144558-c5830a0b-9ae6-4020-ae73-561fa2e85dec.png)
+
+
+TIMING DIAGRAM:
+
+![image](https://user-images.githubusercontent.com/94911373/171144678-5539c255-23ba-4d42-8490-63b0875849f2.png)
+
+
+TRUTH TABLE:
+
+![image](https://user-images.githubusercontent.com/94911373/171144802-8ca73e4e-8797-43ed-810d-a0c0fb069834.png)
+
 
 
 
@@ -86,3 +153,5 @@ RegisterNumber:
 
 
 ### RESULTS 
+
+Hence 4x1 Multiplexer and 1x4 Demultiplexer is been implemented and verified using verilog programming and its output are validated
