@@ -47,7 +47,7 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-~~~
+
 1.Start the module using module projname().
 
 2.Declare the inputs and outputs along with the select lines according to the multiplexer and demultiplexer.
@@ -60,7 +60,6 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 
 6.Generate RTL realization and timing diagrams
 
-~~~
 
 ### PROGRAM 
 /*
@@ -142,7 +141,7 @@ and(Y2,I,S0,S1C);
 and(Y3,I,S0,S1);
 endmodule
 
-~~~
+~~~~
 
 RTL LOGIC:
 
